@@ -1,0 +1,148 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0f172a;
+    color: #e2e8f0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.bg-section {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    position: relative;
+}
+
+.bg-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+    z-index: 1;
+}
+
+.content-z {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-bg {
+    /* --- USER ACTION: Replace 'xavyf1.jpg' with actual URL --- */
+    background-image: url('xavyf1.jpg');
+    background-color: #1e293b;
+}
+
+.mod-bg {
+    /* --- USER ACTION: Replace 'xavyf2.avif' with actual URL --- */
+    background-image: url('xavyf2.avif');
+    background-color: #334155;
+}
+
+.cool-button {
+    display: inline-block;
+    background-image: linear-gradient(to right, #38bdf8, #0ea5e9);
+    color: white;
+    font-weight: bold;
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px #0ea5e9;
+    transition: all 0.3s ease-in-out;
+    transform: perspective(1px) translateZ(0);
+}
+
+.cool-button:hover {
+    background-image: linear-gradient(to right, #0ea5e9, #0284c7);
+    box-shadow: 0 0 25px 5px rgba(14, 165, 233, 0.6);
+    transform: scale(1.05);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.hero-content,
+.mod-content,
+.footer-content {
+    animation-delay: 0.2s;
+}
+
+.social-icon {
+    color: #94a3b8;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #38bdf8;
+    transform: scale(1.1);
+}
+
+#sidebar {
+    transition: transform 0.3s ease-in-out;
+}
+
+#sidebar.translate-x-full {
+    transform: translateX(100%);
+}
+
+#sidebar.translate-x-0 {
+    transform: translateX(0);
+}
+
+#sidebar-overlay {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.logo-img[onerror] {
+    display: inline-block;
+    background-color: #374151;
+    color: #9ca3af;
+    text-align: center;
+    font-size: 0.8rem;
+    content: 'Logo';
+    border-radius: 0.25rem;
+}
+
+#open-sidebar-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+ .scroll-down-arrow {
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+     z-index: 10;
+ }
+ .trust-marker-card {
+    background-color: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    backdrop-filter: blur(2px);
+ }
+ /* Basic styling for ad container */
+ .ad-container {
+     width: 100%;
+     /* Add more specific sizing/styling if needed based on ad type */
+ }
