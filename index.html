@@ -192,45 +192,45 @@
 
     <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 pointer-events-none"></div>
 
-    <nav id="sidebar"
-        class="fixed top-0 right-0 h-full w-64 sm:w-72 shadow-xl z-50 transform translate-x-full p-5 flex flex-col"
-        style="background-color: #010100;">
-        <div class="flex justify-between items-center mb-6">
+<nav id="sidebar"
+    class="fixed top-0 left-0 h-full w-64 sm:w-72 shadow-xl z-50 transform -translate-x-full p-5 flex flex-col"
+    style="background-color: #010100;">
+    <div class="flex justify-between items-center mb-6">
 
-            <button id="close-sidebar-btn" aria-label="Close menu" class="text-gray-400 hover:text-white p-1">
-                <i class="fas fa-times fa-lg"></i>
-            </button>
-        </div>
-        <div class="flex-grow">
-            <a href="https://www.instagram.com/_xavy.___/"
-                class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">Instagram</a>
-            <a href="https://www.youtube.com/@XAVYgaming"
-                class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">YouTube</a>
-            <a href="https://discord.gg/eD6bnx8rpb"
-                class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">Discord</a>
-            <a href="https://github.com/Sathwik656"
-                class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">GitHub</a>
-            <a href="#contact"
-                class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">Contact
-                Me</a>
-        </div>
+        <button id="close-sidebar-btn" aria-label="Close menu" class="text-gray-400 hover:text-white p-1">
+            <i class="fas fa-times fa-lg"></i>
+        </button>
+    </div>
+    <div class="flex-grow">
+        <a href="https://www.instagram.com/_xavy.___/"
+            class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">Instagram</a>
+        <a href="https://www.youtube.com/@XAVYgaming"
+            class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">YouTube</a>
+        <a href="https://discord.gg/eD6bnx8rpb"
+            class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">Discord</a>
+        <a href="https://github.com/Sathwik656"
+            class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">GitHub</a>
+        <a href="#contact"
+            class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">Contact
+            Me</a>
+    </div>
 
-        <div class="mt-auto text-center text-gray-500 text-xs">
-            &copy; 2025 XAVY Gaming
-        </div>
-    </nav>
+    <div class="mt-auto text-center text-gray-500 text-xs">
+        &copy; 2025 XAVY Gaming
+    </div>
+</nav>
 
     <main>
         <section
             class="hero-bg bg-section min-h-screen flex items-center justify-center text-white text-center px-4 overflow-hidden relative">
             <div class="content-z max-w-4xl mx-auto hero-content fade-in-up relative">
 
-                <h1 class="text-6xl md:text-3xl font-black mb-5 uppercase tracking-wider"
+                <h1 class="text-4xl md:text-6xl font-black mb-5 uppercase tracking-wider"
                     style="text-shadow: 2px 2px 8px rgba(0,0,0,0.8);">XAVY</h1>
-                <p class="text-lg md:text- 2xl mb-10 max-w-1xl mx-auto leading-relaxed"
-                    style="text-shadow: 2px 2px 8px rgba(0,0,0,0.8);">
-                    Specializing in Real Racing 3 content, with a focus on creating high-quality videos that blend creative memes, Formula 1-themed segments, and competitive weekly time trial challenges. Dedicated to providing engaging and entertaining experiences for motorsport enthusiasts.
-                </p>
+                    <p class="text-base md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed text-gray-300" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.8);">
+                        Specializing in Real Racing 3 content, with a focus on creating high-quality videos that blend creative memes, Formula 1-themed segments, and competitive weekly time trial challenges. Dedicated to providing engaging and entertaining experiences for motorsport enthusiasts.
+                    </p>
+                    
                 <a href="#mod-section"
                     class="scroll-down-arrow absolute  left-1/2 transform -translate-x-1/2 text-white text-4xl animate-bounce hover:text-sky-400 transition duration-300"
                     aria-label="Scroll down">
@@ -388,81 +388,81 @@
     </footer>
 
     <script>
-        // JS comments are kept for clarity
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('XAVY Gaming website loaded successfully!');
+       // JS comments are kept for clarity
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('XAVY Gaming website loaded successfully!');
 
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('sidebar-overlay');
-            const openBtn = document.getElementById('open-sidebar-btn');
-            const closeBtn = document.getElementById('close-sidebar-btn');
-            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    const openBtn = document.getElementById('open-sidebar-btn');
+    const closeBtn = document.getElementById('close-sidebar-btn');
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
 
-            function openSidebar() {
-                sidebar.classList.remove('translate-x-full');
-                sidebar.classList.add('translate-x-0');
-                overlay.classList.remove('opacity-0', 'pointer-events-none');
-                overlay.classList.add('opacity-100');
-                document.body.style.overflow = 'hidden';
+    function openSidebar() {
+        sidebar.classList.remove('-translate-x-full');
+        sidebar.classList.add('translate-x-0');
+        overlay.classList.remove('opacity-0', 'pointer-events-none');
+        overlay.classList.add('opacity-100');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeSidebar() {
+        sidebar.classList.remove('translate-x-0');
+        sidebar.classList.add('-translate-x-full');
+        overlay.classList.remove('opacity-100');
+        overlay.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+    }
+
+    openBtn.addEventListener('click', openSidebar);
+    closeBtn.addEventListener('click', closeSidebar);
+    overlay.addEventListener('click', closeSidebar);
+
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                closeSidebar();
+            } else if (!href || href === "") {
+                closeSidebar();
             }
-
-            function closeSidebar() {
-                sidebar.classList.remove('translate-x-0');
-                sidebar.classList.add('translate-x-full');
-                overlay.classList.remove('opacity-100');
-                overlay.classList.add('opacity-0', 'pointer-events-none');
-                document.body.style.overflow = '';
-            }
-
-            openBtn.addEventListener('click', openSidebar);
-            closeBtn.addEventListener('click', closeSidebar);
-            overlay.addEventListener('click', closeSidebar);
-
-            sidebarLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    const href = link.getAttribute('href');
-                    if (href && href.startsWith('#')) {
-                        closeSidebar();
-                    } else if (!href || href === "") {
-                        closeSidebar();
-                    }
-                });
-            });
-
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId && targetId.length > 1) {
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            e.preventDefault();
-                            targetElement.scrollIntoView({
-                                behavior: 'smooth'
-                            });
-                        } else {
-                            console.warn(`Target element not found for link: ${targetId}`);
-                        }
-                    } else if (targetId === '#') {
-                        e.preventDefault();
-                        console.log("Anchor link with just '#' clicked.");
-                    }
-                });
-            });
-
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in-up');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.hero-content, .mod-content, .footer-content').forEach(el => {
-                observer.observe(el);
-            });
         });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId.length > 1) {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                } else {
+                    console.warn(`Target element not found for link: ${targetId}`);
+                }
+            } else if (targetId === '#') {
+                e.preventDefault();
+                console.log("Anchor link with just '#' clicked.");
+            }
+        });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.hero-content, .mod-content, .footer-content').forEach(el => {
+        observer.observe(el);
+    });
+});
+
     </script>
 
 </body>
