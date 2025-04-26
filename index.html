@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XAVY Gaming - Real Racing 3 Mods</title>
-    <link rel="shortcut icon" href="channels4_profile.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -182,12 +182,6 @@
             <span class="text-xl font-bold tracking-tight">XAVY GAMING</span>
         </div>
 
-        <div class="flex items-center">
-            <img src="xavylogo1.jpg" alt="XAVY Gaming Logo" class="h-4 w-auto logo-img"
-                onerror="this.style.display='none'; this.onerror=null; const p=document.createElement('span'); p.textContent='XAVY'; p.className='text-xl font-bold'; this.parentNode.insertBefore(p, this);">
-        </div>
-
-
     </header>
 
     <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 pointer-events-none"></div>
@@ -271,98 +265,71 @@
 
 
     <section id="leaderboard"
-        class="bg-gray-800 bg-opacity-80 py-24 md:py-32 flex flex-col items-center justify-center text-white text-center px-4 overflow-hidden backdrop-blur-sm border-t border-gray-700/50">
-        <div class="content-z max-w-6xl mx-auto mod-content fade-in-up">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12 tracking-tight"
+        class="bg-gradient-to-b from-gray-900/80 to-slate-900/90 py-24 md:py-32 flex flex-col items-center justify-center text-white text-center px-4 overflow-hidden backdrop-blur-sm border-t border-gray-700/50">
+        <div class="content-z max-w-7xl mx-auto w-full mod-content fade-in-up">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 tracking-tight"
                 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Weekly Challenge Leaderboard</h2>
 
-            <!-- Map: Monaco -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold mb-6 text-sky-400">Monaco Circuit</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left table-auto border-collapse">
-                        <thead>
-                            <tr class="text-gray-400 text-sm uppercase">
-                                <th class="px-4 py-3 border-b border-gray-600">#</th>
-                                <th class="px-4 py-3 border-b border-gray-600">Instagram</th>
-                                <th class="px-4 py-3 border-b border-gray-600">Best Time</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-gray-300">
-                            <tr>
-                                <td class="px-4 py-3 border-b border-gray-700">1</td>
-                                <td class="px-4 py-3 border-b border-gray-700">@charlie_james618</td>
-                                <td class="px-4 py-3 border-b border-gray-700">00.56.793</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 border-b border-gray-700">2</td>
-                                <td class="px-4 py-3 border-b border-gray-700">-</td>
-                                <td class="px-4 py-3 border-b border-gray-700">00.00.000</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+
+                <div
+                    class="bg-slate-800/60 border border-gray-700/50 rounded-xl shadow-lg p-6 backdrop-blur-sm hover:border-sky-500/60 hover:shadow-sky-500/20 transition duration-300 ease-in-out transform hover:-translate-y-1 flex flex-col">
+                    <h3 class="text-2xl font-semibold mb-5 text-sky-400 tracking-wide border-b border-gray-600 pb-3">
+                        <i class="fas fa-road mr-2 opacity-80"></i>Monaco Circuit
+                    </h3>
+                    <div class="flex-grow space-y-4 text-left">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-trophy fa-fw text-yellow-400 w-5 text-center"></i>
+                            <span class="text-sm uppercase text-gray-400 flex-shrink-0">Rank 1:</span>
+                            <span class="text-gray-200 truncate font-medium">@charlie_james618</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-stopwatch fa-fw text-blue-400 w-5 text-center"></i>
+                            <span class="text-sm uppercase text-gray-400 flex-shrink-0">Time:</span>
+                            <span class="text-lg font-mono font-bold text-white tracking-wider">00:56.793</span>
+                        </div>
+                        </div>
+                    <p class="text-xs text-gray-500 mt-5 text-center italic">Top time submission</p>
                 </div>
-            </div>
-
-            <!-- Map: Silverstone -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold mb-6 text-sky-400">Silverstone Circuit</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left table-auto border-collapse">
-                        <thead>
-                            <tr class="text-gray-400 text-sm uppercase">
-                                <th class="px-4 py-3 border-b border-gray-600">#</th>
-                                <th class="px-4 py-3 border-b border-gray-600">Instagram</th>
-                                <th class="px-4 py-3 border-b border-gray-600">Best Time</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-gray-300">
-                            <tr>
-                                <td class="px-4 py-3 border-b border-gray-700">1</td>
-                                <td class="px-4 py-3 border-b border-gray-700">@_itz_manan</td>
-                                <td class="px-4 py-3 border-b border-gray-700">01:11.291</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 border-b border-gray-700">2</td>
-                                <td class="px-4 py-3 border-b border-gray-700">-</td>
-                                <td class="px-4 py-3 border-b border-gray-700">00.00.000</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div
+                    class="bg-slate-800/60 border border-gray-700/50 rounded-xl shadow-lg p-6 backdrop-blur-sm hover:border-sky-500/60 hover:shadow-sky-500/20 transition duration-300 ease-in-out transform hover:-translate-y-1 flex flex-col">
+                    <h3 class="text-2xl font-semibold mb-5 text-sky-400 tracking-wide border-b border-gray-600 pb-3">
+                         <i class="fas fa-flag-checkered mr-2 opacity-80"></i>Silverstone Circuit
+                    </h3>
+                     <div class="flex-grow space-y-4 text-left">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-trophy fa-fw text-yellow-400 w-5 text-center"></i>
+                            <span class="text-sm uppercase text-gray-400 flex-shrink-0">Rank 1:</span>
+                            <span class="text-gray-200 truncate font-medium">@_itz_manan</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-stopwatch fa-fw text-blue-400 w-5 text-center"></i>
+                            <span class="text-sm uppercase text-gray-400 flex-shrink-0">Time:</span>
+                            <span class="text-lg font-mono font-bold text-white tracking-wider">01:11.291</span>
+                        </div>
+                        </div>
+                     <p class="text-xs text-gray-500 mt-5 text-center italic">Top time submission</p>
                 </div>
-            </div>
-
-
-            <!-- Map: SPA -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold mb-6 text-sky-400">SPA Circuit</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left table-auto border-collapse">
-                        <thead>
-                            <tr class="text-gray-400 text-sm uppercase">
-                                <th class="px-4 py-3 border-b border-gray-600">#</th>
-                                <th class="px-4 py-3 border-b border-gray-600">Instagram</th>
-                                <th class="px-4 py-3 border-b border-gray-600">Best Time</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-gray-300">
-                            <tr>
-                                <td class="px-4 py-3 border-b border-gray-700">1</td>
-                                <td class="px-4 py-3 border-b border-gray-700">@truthecreator</td>
-                                <td class="px-4 py-3 border-b border-gray-700">01.23.270</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 border-b border-gray-700">2</td>
-                                <td class="px-4 py-3 border-b border-gray-700">-</td>
-                                <td class="px-4 py-3 border-b border-gray-700">00.00.000</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div
+                    class="bg-slate-800/60 border border-gray-700/50 rounded-xl shadow-lg p-6 backdrop-blur-sm hover:border-sky-500/60 hover:shadow-sky-500/20 transition duration-300 ease-in-out transform hover:-translate-y-1 flex flex-col">
+                    <h3 class="text-2xl font-semibold mb-5 text-sky-400 tracking-wide border-b border-gray-600 pb-3">
+                        <i class="fas fa-mountain mr-2 opacity-80"></i>SPA Circuit
+                    </h3>
+                     <div class="flex-grow space-y-4 text-left">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-trophy fa-fw text-yellow-400 w-5 text-center"></i>
+                            <span class="text-sm uppercase text-gray-400 flex-shrink-0">Rank 1:</span>
+                            <span class="text-gray-200 truncate font-medium">@truthecreator</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-stopwatch fa-fw text-blue-400 w-5 text-center"></i>
+                            <span class="text-sm uppercase text-gray-400 flex-shrink-0">Time:</span>
+                             <span class="text-lg font-mono font-bold text-white tracking-wider">01:23.270</span>
+                        </div>
+                        </div>
+                     <p class="text-xs text-gray-500 mt-5 text-center italic">Top time submission</p>
                 </div>
-            </div>
-
-
-        </div>
+                </div> </div>
     </section>
 
 
