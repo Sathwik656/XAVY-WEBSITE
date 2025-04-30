@@ -140,20 +140,10 @@
             border-radius: 0.25rem;
         }
 
-        #open-sidebar-btn {
-            width: 2.5rem;
-            height: 2.5rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
+        /* Scroll down arrow positioning - Adjusted */
         .scroll-down-arrow {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
+             z-index: 10; /* Ensure it's above background elements */
+             /* Positioning now handled by flexbox margin within hero-content */
         }
 
         .trust-marker-card {
@@ -242,7 +232,7 @@
     <main>
         <section
             class="hero-bg bg-section min-h-screen flex items-center justify-center text-white text-center px-4 overflow-hidden relative">
-            <div class="content-z max-w-4xl mx-auto hero-content fade-in-up relative">
+            <div class="content-z max-w-4xl mx-auto hero-content fade-in-up relative flex flex-col items-center">
 
                 <h1 class="text-4xl md:text-6xl font-black mb-5 uppercase tracking-wider"
                     style="text-shadow: 2px 2px 8px rgba(0,0,0,0.8);">XAVY</h1>
@@ -252,12 +242,12 @@
                     creative memes, Formula 1-themed segments, and competitive weekly time trial challenges.
                 </p>
 
-                <a href="#mod-section"
-                    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white text-4xl animate-bounce hover:text-sky-400 transition duration-300"
+                 <a href="#mod-section"
+                    class="scroll-down-arrow text-white text-4xl animate-bounce hover:text-sky-400 transition duration-300 mt-12" /* Added mt-12 for spacing, removed absolute positioning */
                     aria-label="Scroll down">
                     <i class="fas fa-chevron-down"></i>
                 </a>
-            </div>
+                </div>
         </section>
 
         <section id="socials" class="py-16 px-4 md:px-6 bg-slate-900/80">
@@ -450,16 +440,30 @@
             overlay.addEventListener('click', closeSidebar);
 
             sidebarLinks.forEach(link => {
-                link.addEventListener('click', () => {
+                link.addEventListener('click', (e) => {
                     const href = link.getAttribute('href');
-                    // Close sidebar if it's a hash link or empty href (likely placeholder)
-                    if (href && href.startsWith('#')) {
-                        // Allow smooth scroll handler to take over for hash links
+                    const isHashLink = href && href.startsWith('#');
+                    const isExternalLink = link.target === '_blank';
+
+                    // Close sidebar unless it's an external link opening in a new tab
+                    if (!isExternalLink) {
                          closeSidebar();
-                    } else if (!href || href === "") {
-                         closeSidebar();
+                     }
+
+                    // If it's a hash link on the current page, prevent default and handle smooth scroll
+                    if (isHashLink && href.length > 1 && document.querySelector(href)) {
+                        e.preventDefault(); // Prevent default immediate jump
+                        const targetElement = document.querySelector(href);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        } else {
+                            console.warn(`Target element not found for ID: ${href}`);
+                        }
+                    } else if (isHashLink && href === '#') {
+                        e.preventDefault(); // Prevent default for just '#'
                     }
-                    // For external links (target="_blank") or internal page links, sidebar stays open briefly until navigation occurs
                 });
             });
 
