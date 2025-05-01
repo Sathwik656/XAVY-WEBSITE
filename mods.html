@@ -1634,27 +1634,33 @@
         <div></div>
     </header>
 
-    <div id="sidebar-overlay"></div>
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 pointer-events-none"></div>
 
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <span></span> <button id="close-sidebar-btn" aria-label="Close menu">
+    <nav id="sidebar"
+        class="fixed top-0 left-0 h-full w-64 sm:w-72 shadow-xl z-50 transform -translate-x-full p-5 flex flex-col"
+        style="background-color: #010100;">
+        <div class="flex justify-between items-center mb-6">
+            <span class="text-xl font-bold text-white">XAVY GAMING</span>
+            <button id="close-sidebar-btn" aria-label="Close menu" class="text-gray-400 hover:text-white p-1">
                 <i class="fas fa-times fa-lg"></i>
             </button>
         </div>
-        <div class="sidebar-links">
-            <a href="index.html" class="sidebar-link">Home</a>
-            <a href="https://www.instagram.com/_xavy.___/" class="sidebar-link" target="_blank"
-                rel="noopener noreferrer">Instagram</a>
-            <a href="https://www.youtube.com/@XAVYgaming" class="sidebar-link" target="_blank"
-                rel="noopener noreferrer">YouTube</a>
-            <a href="https://discord.gg/eD6bnx8rpb" class="sidebar-link" target="_blank"
-                rel="noopener noreferrer">Discord</a>
-            <a href="https://github.com/Sathwik656" class="sidebar-link" target="_blank"
-                rel="noopener noreferrer">GitHub</a>
-            <a href="index.html#contact" class="sidebar-link">Contact Me</a>
+        <div class="flex-grow">
+             <a href="index.html" class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">Home</a>
+            <a href="https://www.instagram.com/_xavy.___/"
+                class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.youtube.com/@XAVYgaming"
+                class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://discord.gg/eD6bnx8rpb"
+                class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link" target="_blank" rel="noopener noreferrer">Discord</a>
+            <a href="https://github.com/Sathwik656"
+                class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="#contact"
+                class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">Contact
+                Me</a>
         </div>
-        <div class="sidebar-footer">
+
+        <div class="mt-auto text-center text-gray-500 text-xs">
             © 2025 XAVY Gaming
         </div>
     </nav>
