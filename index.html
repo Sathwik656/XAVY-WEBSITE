@@ -343,57 +343,128 @@
 
 
 
-    <section id="leaderboard"
-        class="py-24 px-4 bg-gradient-to-b from-black via-slate-900 to-black text-white border-t border-gray-700/50">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-10 tracking-tight text-sky-400 drop-shadow">MONZA
-                Leaderboard</h2>
-            <div class="overflow-x-auto rounded-lg shadow-lg border border-gray-600/30 backdrop-blur-sm">
-                <table class="min-w-full divide-y divide-gray-600 text-sm md:text-base font-mono">
-                    <thead class="bg-slate-800/80 text-sky-300 uppercase text-xs tracking-widest">
-                        <tr>
-                            <th class="px-4 py-3 text-left">Position</th>
-                            <th class="px-4 py-3 text-left">Driver</th>
-                            <th class="px-4 py-3 text-right">Time</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-700 bg-slate-900/50">
-                        <tr class="hover:bg-slate-800/60 transition-all duration-300 ease-in-out">
-                            <td class="px-4 py-3 font-bold text-yellow-400">1</td>
-                            <td class="px-4 py-3">@thx_rossi17</td>
-                            <td class="px-4 py-3 text-right text-green-400 font-bold">01:05.260</td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-3">2</td>
-                            <td class="px-4 py-3">@autobot01_</td>
-                            <td class="px-4 py-3 text-right">01:08.371</td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-3">3</td>
-                            <td class="px-4 py-3">@iloveturbo32</td>
-                            <td class="px-4 py-3 text-right">01:10.855</td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-3">4</td>
-                            <td class="px-4 py-3">@hs_kurma_</td>
-                            <td class="px-4 py-3 text-right">01:11.261</td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-3">5</td>
-                            <td class="px-4 py-3">@alejo_vasqz</td>
-                            <td class="px-4 py-3 text-right">01:11.701</td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-3">6</td>
-                            <td class="px-4 py-3">@safisafiev</td>
-                            <td class="px-4 py-3 text-right">01:12.000</td>
-                        </tr>
-                    </tbody>
-                </table>
+ <section id="leaderboard"
+    class="py-24 px-4 bg-gradient-to-b from-black via-slate-900 to-black text-white border-t border-gray-700/50">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-10 tracking-tight text-sky-400 drop-shadow">MONZA
+            Leaderboard</h2>
+            <div id="timer-container" class="mt-8 text-center text-lg text-amber-400">
+                <span class="font-semibold">Event ends in:</span>
+                <span id="countdown-timer" class="font-mono font-bold">
+                    -- days - -- hours - -- minutes
+                </span>
             </div>
-            <p class="text-xs text-gray-500 mt-6 italic">Submit your lap via Instagram to get featured.</p>
+            <br>
+        <div class="overflow-x-auto rounded-lg shadow-lg border border-gray-600/30 backdrop-blur-sm">
+            <table class="min-w-full divide-y divide-gray-600 text-sm md:text-base font-mono">
+                <thead class="bg-slate-800/80 text-sky-300 uppercase text-xs tracking-widest">
+                    <tr>
+                        <th class="px-4 py-3 text-left">Position</th>
+                        <th class="px-4 py-3 text-left">Driver</th>
+                        <th class="px-4 py-3 text-right">Time</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-700 bg-slate-900/50">
+                    <tr class="hover:bg-slate-800/60 transition-all duration-300 ease-in-out">
+                        <td class="px-4 py-3 font-bold text-yellow-400">1</td>
+                        <td class="px-4 py-3">@thx_rossi17</td>
+                        <td class="px-4 py-3 text-right text-green-400 font-bold">01:05.260</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3">2</td>
+                        <td class="px-4 py-3">@autobot01_</td>
+                        <td class="px-4 py-3 text-right">01:08.371</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3">3</td>
+                        <td class="px-4 py-3">@iloveturbo32</td>
+                        <td class="px-4 py-3 text-right">01:10.855</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3">4</td>
+                        <td class="px-4 py-3">@hs_kurma_</td>
+                        <td class="px-4 py-3 text-right">01:11.261</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3">5</td>
+                        <td class="px-4 py-3">@alejo_vasqz</td>
+                        <td class="px-4 py-3 text-right">01:11.701</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3">6</td>
+                        <td class="px-4 py-3">@safisafiev</td>
+                        <td class="px-4 py-3 text-right">01:12.000</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </section>
+        <p class="text-xs text-gray-500 mt-6 italic">Submit your lap via Instagram to get featured.</p>
+    </div>
+</section>
+
+<script>
+    // Set the date we're counting down to (6 days from now)
+    const countDownDate = new Date();
+    countDownDate.setDate(countDownDate.getDate() + 7);
+    countDownDate.setHours(0, 0, 0, 0); // Optional: Set to midnight at the start of the target day
+    const targetTime = countDownDate.getTime();
+
+    // Get the element to display the countdown
+    const timerElement = document.getElementById("countdown-timer");
+    const timerContainer = document.getElementById("timer-container");
+
+
+    // Update the count down every 1 second
+    const x = setInterval(function() {
+
+        // Get today's date and time
+        const now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        const distance = targetTime - now;
+
+        // Time calculations for days, hours, minutes
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        // const seconds = Math.floor((distance % (1000 * 60)) / 1000); // Seconds are calculated but not displayed per request
+
+        // Display the result in the element with id="countdown-timer"
+        if (timerElement) {
+           timerElement.innerHTML = days + " days - " + hours + " hours - " + minutes + " minutes ";
+        }
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+            clearInterval(x);
+             if (timerContainer) { // Check if container exists
+                timerContainer.innerHTML = "<span class='font-bold text-red-500'>EVENT ENDED</span>";
+             } else if (timerElement) { // Fallback to just the timer element if container wasn't found
+                 timerElement.innerHTML = "<span class='font-bold text-red-500'>EVENT ENDED</span>";
+             }
+        }
+    }, 1000); // Update every second
+
+     // Run once immediately on load so it doesn't show "--" initially
+     (function(){
+        const now = new Date().getTime();
+        const distance = targetTime - now;
+        if (distance > 0) {
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            if (timerElement) {
+                timerElement.innerHTML = days + " days - " + hours + " hours - " + minutes + " minutes ";
+            }
+        } else {
+             if (timerContainer) {
+                timerContainer.innerHTML = "<span class='font-bold text-red-500'>EVENT ENDED</span>";
+             } else if (timerElement) {
+                 timerElement.innerHTML = "<span class='font-bold text-red-500'>EVENT ENDED</span>";
+             }
+        }
+    })();
+</script>
 
 
 
