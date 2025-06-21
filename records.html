@@ -35,9 +35,68 @@
 </head>
 <body class="bg-slate-950 text-white">
 
-  <nav class="bg-black backdrop-blur border-b border-gray-700 px-6 py-4 flex items-center justify-center shadow-md sticky top-0 z-50">
-  <a href="/" class="text-xs sm:text-sm md:text-xl font-bold tracking-tight hover:text-sky-500 transition">HOME</a>
-</nav>
+<header style="background-color: #010100;"
+    class="w-full backdrop-blur-sm text-white py-2 px-4 md:px-6 sticky top-0 z-30 shadow-lg border-b border-gray-700/50 grid grid-cols-[auto_1fr_auto] items-center gap-4">
+
+    <!-- Sidebar Button -->
+    <button id="open-sidebar-btn" aria-label="Open menu"
+        class="p-2 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-center justify-self-start">
+        <i class="fas fa-bars fa-lg inline-block"></i>
+    </button>
+
+    <!-- Navigation Header -->
+    <nav class="flex justify-center gap-6">
+      <a href="records.html"
+        class="text-white text-xs sm:text-sm md:text-xl font-bold tracking-tight hover:text-sky-500 transition">
+        TRACK-RECORDS
+      </a>
+      <a href="index.html#leaderboard"
+        class="text-white text-xs sm:text-sm md:text-xl font-bold tracking-tight hover:text-sky-500 transition">
+        LEADERBOARD
+      </a>
+    </nav>
+
+
+    <!-- Right Side Empty Placeholder -->
+    <div></div>
+</header>
+
+
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 pointer-events-none"></div>
+
+    <nav id="sidebar"
+        class="fixed top-0 left-0 h-full w-64 sm:w-72 shadow-xl z-50 transform -translate-x-full p-5 flex flex-col"
+        style="background-color: #010100;">
+        <div class="flex justify-between items-center mb-6">
+            <span class="text-xl font-bold text-white">XAVY GAMING</span>
+            <button id="close-sidebar-btn" aria-label="Close menu" class="text-gray-400 hover:text-white p-1">
+                <i class="fas fa-times fa-lg"></i>
+            </button>
+        </div>
+        <div class="flex-grow">
+            <a href="index.html"
+                class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">Home</a>
+            <a href="https://www.instagram.com/_xavy.___/"
+                class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link"
+                target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.youtube.com/@XAVYgaming"
+                class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link"
+                target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://discord.gg/eD6bnx8rpb"
+                class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link"
+                target="_blank" rel="noopener noreferrer">Discord</a>
+            <a href="https://github.com/Sathwik656"
+                class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link"
+                target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="#contact"
+                class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">Contact
+                Me</a>
+        </div>
+
+        <div class="mt-auto text-center text-gray-500 text-xs">
+            © 2025 XAVY Gaming
+        </div>
+    </nav>
 
 
   <main class="px-4 py-10 space-y-12 max-w-6xl mx-auto">
@@ -260,6 +319,8 @@
 
   </main>
 
+
+
   <footer id="contact" class="bg-black text-white py-8 px-6 md:px-10 border-t border-gray-700/50 mt-12">
     <div class="container mx-auto text-center footer-content">
       <h3 class="text-xl font-semibold mb-4 tracking-tight">Follow Us</h3>
@@ -281,6 +342,102 @@
       <p class="text-gray-500 text-sm">© 2025 XAVY Gaming. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <script>
+        // JS comments are kept for clarity
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('XAVY Gaming website loaded successfully!');
+
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const openBtn = document.getElementById('open-sidebar-btn');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+            function openSidebar() {
+                sidebar.classList.remove('-translate-x-full');
+                sidebar.classList.add('translate-x-0');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                overlay.classList.add('opacity-100');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeSidebar() {
+                sidebar.classList.remove('translate-x-0');
+                sidebar.classList.add('-translate-x-full');
+                overlay.classList.remove('opacity-100');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = '';
+            }
+
+            openBtn.addEventListener('click', openSidebar);
+            closeBtn.addEventListener('click', closeSidebar);
+            overlay.addEventListener('click', closeSidebar);
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    const isHashLink = href && href.startsWith('#');
+                    const isExternalLink = link.target === '_blank';
+
+                    // Close sidebar unless it's an external link opening in a new tab
+                    if (!isExternalLink) {
+                        closeSidebar();
+                    }
+
+                    // If it's a hash link on the current page, prevent default and handle smooth scroll
+                    if (isHashLink && href.length > 1 && document.querySelector(href)) {
+                        e.preventDefault(); // Prevent default immediate jump
+                        const targetElement = document.querySelector(href);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        } else {
+                            console.warn(`Target element not found for ID: ${href}`);
+                        }
+                    } else if (isHashLink && href === '#') {
+                        e.preventDefault(); // Prevent default for just '#'
+                    }
+                });
+            });
+
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    // Check if it's a link to a specific section on the *current* page
+                    if (targetId && targetId.length > 1 && document.querySelector(targetId)) {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(targetId);
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    } else if (targetId === '#') {
+                        e.preventDefault();
+                        console.log("Anchor link with just '#' clicked. Preventing default.");
+                    }
+                    // Note: Links like index.html#section are not handled by this specific listener
+                });
+            });
+
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Target all direct section children of main and the footer content div
+            document.querySelectorAll('main > section, .footer-content').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+    </script>
 
 </body>
 </html>
