@@ -10,56 +10,374 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-     <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a; /* Deep slate */
-            color: #e2e8f0; /* Light slate */
+            background-color: #0f172a;
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .bg-section {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            position: relative;
+        }
+
+        .bg-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+            z-index: 1;
+        }
+
+        .content-z {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-bg {
+            background-image: url('xavyf1.jpg');
+            background-color: #1e293b;
+        }
+
+        .mod-bg {
+            background-image: url('xavyf2.avif');
+            background-color: #334155;
+        }
+
+        .mod1-bg {
+            background-image: url('racing.avif');
+            background-color: #334155;
+        }
+
+        .cool-button {
+            display: inline-block;
+            background-image: linear-gradient(to right, #38bdf8, #0ea5e9);
+            color: white;
+            font-weight: bold;
+            padding: 0.8rem 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px #0ea5e9;
+            transition: all 0.3s ease-in-out;
+            transform: perspective(1px) translateZ(0);
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cool-button:hover {
+            background-image: linear-gradient(to right, #0ea5e9, #0284c7);
+            box-shadow: 0 0 25px 5px rgba(14, 165, 233, 0.6);
+            transform: scale(1.05);
+        }
+
+        .cool-button i {
+            margin-right: 0.5rem;
+        }
+
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .hero-content,
+        .mod-content,
+        .footer-content {
+            animation-delay: 0.2s;
+        }
+
+        .social-icon {
+            color: #94a3b8;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #38bdf8;
+            transform: scale(1.1);
+        }
+
+        #sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #sidebar.translate-x-full {
+            transform: translateX(100%);
+        }
+
+        #sidebar.translate-x-0 {
+            transform: translateX(0);
+        }
+
+        #sidebar-overlay {
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .logo-img[onerror] {
+            display: inline-block;
+            background-color: #374151;
+            color: #9ca3af;
+            text-align: center;
+            font-size: 0.8rem;
+            content: 'Logo';
+            border-radius: 0.25rem;
+        }
+
+        .scroll-down-arrow {
+            z-index: 10;
+        }
+
+        .trust-marker-card {
+            background-color: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            font-size: 0.875rem;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 0.5rem;
+            backdrop-filter: blur(2px);
+        }
+
+        .ad-container {
+            width: 100%;
+        }
+
+        .social-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2), 0 6px 8px -4px rgba(0, 0, 0, 0.2);
+            border-color: rgba(56, 189, 248, 0.5);
+        }
+
+        .fa-3x {
+            font-size: 3em;
+        }
+
+        /* Styles specifically for the policy/about/terms content pages */
+        .policy-container {
+            max-width: 800px;
             line-height: 1.6;
         }
-        .container {
-            max-width: 800px;
-        }
-        h1, h2 {
-            color: #38bdf8; /* Sky blue */
+
+        .policy-container h1,
+        .policy-container h2 {
+            color: #38bdf8;
             font-weight: 700;
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(51, 65, 85, 0.5); /* Slate-700 with opacity */
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
         }
-        h1 {
+
+        .policy-container h1 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
         }
-        h2 {
+
+        .policy-container h2 {
             font-size: 1.8rem;
-            margin-top: 1.5rem; /* Add some top margin for subsequent h2s */
+            margin-top: 1.5rem;
         }
-        p {
+
+        .policy-container p {
             margin-bottom: 1rem;
         }
-         a {
-            color: #94a3b8; /* Slate-400 */
+
+        .policy-container a {
+            color: #94a3b8;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        a:hover {
-            color: #38bdf8; /* Sky blue */
+
+        .policy-container a:hover {
+            color: #38bdf8;
         }
     </style>
 </head>
 
-<body class="p-6 md:p-10">
-    <div class="container mx-auto bg-slate-800/60 p-8 rounded-lg shadow-xl border border-gray-700/50">
-        <h1 class="text-center">About XAVY Gaming</h1>
+<body class="fade-in relative min-h-screen">
 
-        <p>XAVY is a community-driven platform for Real Racing 3 enthusiasts. We provide the latest updates, challenge guides, leaderboards, and gameplay content. Whether you're a beginner or a veteran player, XAVY is your go-to hub for strategy, competition, and connection.</p>
+    <header style="background-color: #010100;" class="w-full backdrop-blur-sm text-white py-2 px-4 md:px-6 sticky top-0 z-30 shadow-lg border-b border-gray-700/50 grid grid-cols-[auto_1fr_auto] items-center gap-4">
+        <button id="open-sidebar-btn" aria-label="Open menu" class="p-2 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-center justify-self-start">
+            <i class="fas fa-bars fa-lg inline-block"></i>
+        </button>
+        <nav class="flex justify-center gap-6">
+            <a href="records.html" class="text-xs sm:text-sm md:text-xl font-bold tracking-tight hover:text-sky-500 transition">
+                TRACK-RECORDS
+            </a>
+            <a href="index.html#leaderboard" class="text-xs sm:text-sm md:text-xl font-bold tracking-tight hover:text-sky-500 transition">
+                LEADERBOARD
+            </a>
+        </nav>
+        <div></div>
+    </header>
 
-        <h2>Our Mission</h2> 
-        <p>Our mission is to enhance your racing experience through quality content and a passionate community.</p>
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 pointer-events-none"></div>
 
-        <p class="mt-8 text-center"><a href="index.html">Back to Home</a></p>
-    </div>
+    <nav id="sidebar" class="fixed top-0 left-0 h-full w-64 sm:w-72 shadow-xl z-50 transform -translate-x-full p-5 flex flex-col" style="background-color: #010100;">
+        <div class="flex justify-between items-center mb-6">
+            <span class="text-xl font-bold text-white">XAVY GAMING</span>
+            <button id="close-sidebar-btn" aria-label="Close menu" class="text-gray-400 hover:text-white p-1">
+                <i class="fas fa-times fa-lg"></i>
+            </button>
+        </div>
+        <div class="flex-grow">
+            <a href="index.html" class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">Home</a>
+            <a href="https://www.instagram.com/_xavy.___/" class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.youtube.com/@XAVYgaming" class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://discord.gg/eD6bnx8rpb" class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link" target="_blank" rel="noopener noreferrer">Discord</a>
+            <a href="https://github.com/Sathwik656" class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="#contact" class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">Contact
+                Me</a>
+        </div>
+        <div class="mt-auto text-center text-gray-500 text-xs">
+            © 2025 XAVY Gaming
+        </div>
+    </nav>
+    
+    <main class="py-12 px-6 md:px-10">
+        <div class="policy-container mx-auto bg-slate-800/60 p-8 rounded-lg shadow-xl border border-gray-700/50">
+            <h1 class="text-center">About XAVY Gaming</h1>
+    
+            <p>XAVY is a community-driven platform for Real Racing 3 enthusiasts. We provide the latest updates, challenge guides, leaderboards, and gameplay content. Whether you're a beginner or a veteran player, XAVY is your go-to hub for strategy, competition, and connection.</p>
+    
+            <h2>Our Mission</h2> 
+            <p>Our mission is to enhance your racing experience through quality content and a passionate community.</p>
+    
+            <p class="mt-8 text-center"><a href="index.html">Back to Home</a></p>
+        </div>
+    </main>
+
+    <footer id="contact" class="bg-black text-white py-8 px-6 md:px-10 border-t border-gray-700/50">
+        <div class="container mx-auto text-center footer-content fade-in-up">
+            <h3 class="text-xl font-semibold mb-4 tracking-tight">Connect With Me</h3>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://discord.com/invite/jysYYUGm" aria-label="Discord" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-discord fa-2x"></i>
+                </a>
+                <a href="https://www.instagram.com/_xavy.___/?igshid=MzNlNGNkZWQ4Mg%3D%3D&utm_source=qr" aria-label="Instagram" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+                <a href="https://github.com/Sathwik656" aria-label="GitHub" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="https://www.youtube.com/@XAVYgaming" aria-label="YouTube" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-youtube fa-2x"></i>
+                </a>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm mb-6 text-gray-400">
+                <a href="about.html" class="hover:text-sky-400 transition duration-200">About Us</a>
+                <a href="privacy.html" class="hover:text-sky-400 transition duration-200">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-sky-400 transition duration-200">Terms of Service</a>
+                <a href="disclaimer.html" class="hover:text-sky-400 transition duration-200">Disclaimer</a>
+            </div>
+
+            <p class="text-sky-400 mb-4 text-sm">Let's Race Together!</p>
+            <p class="text-gray-500 text-sm">© 2025 XAVY Gaming. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const openBtn = document.getElementById('open-sidebar-btn');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+            function openSidebar() {
+                sidebar.classList.remove('-translate-x-full');
+                sidebar.classList.add('translate-x-0');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                overlay.classList.add('opacity-100');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeSidebar() {
+                sidebar.classList.remove('translate-x-0');
+                sidebar.classList.add('-translate-x-full');
+                overlay.classList.remove('opacity-100');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = '';
+            }
+
+            openBtn.addEventListener('click', openSidebar);
+            closeBtn.addEventListener('click', closeSidebar);
+            overlay.addEventListener('click', closeSidebar);
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    const isHashLink = href && href.startsWith('#');
+                    const isExternalLink = link.target === '_blank';
+
+                    if (!isExternalLink) {
+                        closeSidebar();
+                    }
+                    
+                    if (isHashLink && href.length > 1 && document.querySelector(href)) {
+                        e.preventDefault(); 
+                        const targetElement = document.querySelector(href);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    } else if (isHashLink && href === '#') {
+                        e.preventDefault();
+                    }
+                });
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId && targetId.length > 1 && document.querySelector(targetId)) {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(targetId);
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    } else if (targetId === '#') {
+                        e.preventDefault();
+                    }
+                });
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('main > section, .footer-content').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
 </body>
 
 </html>
