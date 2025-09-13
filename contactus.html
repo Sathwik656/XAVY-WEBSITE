@@ -181,10 +181,16 @@
                 We'd love to hear from you! Whether you have a question about our content, a suggestion for a new challenge, or just want to connect, please feel free to reach out. The best way to get in touch is by using the form below.
             </p>
 
-            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+            <div id="contact-form" class="policy-container mx-auto bg-slate-800/60 p-8 rounded-lg shadow-xl border border-gray-700/50 mt-12">
+            <h2 class="text-center !text-2xl !mt-0">Contact Us</h2>
+            <p class="text-center text-gray-400 mb-8">Have a question or want to get in touch? Fill out the form below.</p>
+            
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+
                 <input type="hidden" name="access_key" value="36fb420d-b6f2-4590-9dc8-dfa33264c8fd">
                 <input type="hidden" name="subject" value="New Contact Form Submission from XAVY Gaming">
                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
 
                 <div>
                     <label for="name" class="block mb-2 text-sm font-bold text-gray-300">Full Name</label>
@@ -209,8 +215,9 @@
                         <i class="fas fa-paper-plane"></i> Send Message
                     </button>
                 </div>
-                <div id="form-result" class="mt-4 text-center font-semibold"></div>
             </form>
+        </div>
+        </main>
 
             <h2 class="text-center">Other Ways to Connect</h2>
             <p class="text-center text-gray-400 mb-6">
