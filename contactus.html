@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - XAVY Gaming</title>
+    <title>Contact Us - XAVY Gaming</title>
     <link rel="shortcut icon" href="logo.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,42 +18,6 @@
             color: #e2e8f0;
             scroll-behavior: smooth;
             overflow-x: hidden;
-        }
-
-        .bg-section {
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-            position: relative;
-        }
-
-        .bg-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
-            z-index: 1;
-        }
-
-        .content-z {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-bg {
-            background-image: url('xavyf1.jpg');
-            background-color: #1e293b;
-        }
-
-        .mod-bg {
-            background-image: url('xavyf2.avif');
-            background-color: #334155;
-        }
-
-        .mod1-bg {
-            background-image: url('racing.avif');
-            background-color: #334155;
         }
 
         .cool-button {
@@ -81,13 +45,11 @@
             margin-right: 0.5rem;
         }
 
-
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(20px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -97,12 +59,6 @@
         .fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
             opacity: 0;
-        }
-
-        .hero-content,
-        .mod-content,
-        .footer-content {
-            animation-delay: 0.2s;
         }
 
         .social-icon {
@@ -118,65 +74,16 @@
         #sidebar {
             transition: transform 0.3s ease-in-out;
         }
-
         #sidebar.translate-x-full {
             transform: translateX(100%);
         }
-
         #sidebar.translate-x-0 {
             transform: translateX(0);
         }
-
         #sidebar-overlay {
             transition: opacity 0.3s ease-in-out;
         }
 
-        .logo-img[onerror] {
-            display: inline-block;
-            background-color: #374151;
-            color: #9ca3af;
-            text-align: center;
-            font-size: 0.8rem;
-            content: 'Logo';
-            border-radius: 0.25rem;
-        }
-
-        .scroll-down-arrow {
-            z-index: 10;
-        }
-
-        .trust-marker-card {
-            background-color: rgba(30, 41, 59, 0.7);
-            border: 1px solid rgba(51, 65, 85, 0.5);
-            border-radius: 0.5rem;
-            padding: 0.75rem 1rem;
-            font-size: 0.875rem;
-            display: inline-flex;
-            align-items: center;
-            margin-top: 0.5rem;
-            backdrop-filter: blur(2px);
-        }
-
-        .ad-container {
-            width: 100%;
-        }
-
-        .social-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            border: 1px solid transparent;
-        }
-
-        .social-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2), 0 6px 8px -4px rgba(0, 0, 0, 0.2);
-            border-color: rgba(56, 189, 248, 0.5);
-        }
-
-        .fa-3x {
-            font-size: 3em;
-        }
-
-        /* Styles specifically for the policy/about/terms content pages */
         .policy-container {
             max-width: 800px;
             line-height: 1.6;
@@ -198,7 +105,7 @@
 
         .policy-container h2 {
             font-size: 1.8rem;
-            margin-top: 1.5rem;
+            margin-top: 2.5rem; /* Increased margin for better separation */
         }
 
         .policy-container p {
@@ -214,6 +121,13 @@
         .policy-container a:hover {
             color: #38bdf8;
         }
+        
+        .contact-method i {
+            color: #38bdf8;
+            width: 2rem; /* Ensure icons align */
+            text-align: center;
+        }
+
     </style>
 </head>
 
@@ -253,7 +167,7 @@
             <a href="https://www.youtube.com/@XAVYgaming" class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link" target="_blank" rel="noopener noreferrer">YouTube</a>
             <a href="https://discord.gg/eD6bnx8rpb" class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link" target="_blank" rel="noopener noreferrer">Discord</a>
             <a href="https://github.com/Sathwik656" class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="#contact-form" class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">Contact Me</a>
+            <a href="contact.html" class="block py-2.5 px-4 rounded-md text-gray-300 hover:bg-gray-700/50 hover:text-sky-400 transition duration-150 sidebar-link">Contact Me</a>
         </div>
         <div class="mt-auto text-center text-gray-500 text-xs">
             © 2025 XAVY Gaming
@@ -262,17 +176,62 @@
     
     <main class="py-12 px-6 md:px-10">
         <div class="policy-container mx-auto bg-slate-800/60 p-8 rounded-lg shadow-xl border border-gray-700/50">
-            <h1 class="text-center">About XAVY Gaming</h1>
-    
-            <p>XAVY is a community-driven platform for Real Racing 3 enthusiasts. We provide the latest updates, challenge guides, leaderboards, and gameplay content. Whether you're a beginner or a veteran player, XAVY is your go-to hub for strategy, competition, and connection.</p>
-    
-            <h2>Our Mission</h2> 
-            <p>Our mission is to enhance your racing experience through quality content and a passionate community.</p>
-    
-            <p class="mt-8 text-center"><a href="index.html">Back to Home</a></p>
-        </div>
+            <h1 class="text-center">Contact Us</h1>
+            <p class="text-center text-gray-400 mb-8">
+                We'd love to hear from you! Whether you have a question about our content, a suggestion for a new challenge, or just want to connect, please feel free to reach out. The best way to get in touch is by using the form below.
+            </p>
 
-    
+            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                <input type="hidden" name="access_key" value="36fb420d-b6f2-4590-9dc8-dfa33264c8fd">
+                <input type="hidden" name="subject" value="New Contact Form Submission from XAVY Gaming">
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                <div>
+                    <label for="name" class="block mb-2 text-sm font-bold text-gray-300">Full Name</label>
+                    <input type="text" name="name" id="name" required
+                           class="w-full px-4 py-2 text-white bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+                </div>
+                
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-bold text-gray-300">Email Address</label>
+                    <input type="email" name="email" id="email" required
+                           class="w-full px-4 py-2 text-white bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+                </div>
+                
+                <div>
+                    <label for="message" class="block mb-2 text-sm font-bold text-gray-300">Message</label>
+                    <textarea name="message" id="message" rows="5" required
+                              class="w-full px-4 py-2 text-white bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 transition"></textarea>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="cool-button">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </div>
+                <div id="form-result" class="mt-4 text-center font-semibold"></div>
+            </form>
+
+            <h2 class="text-center">Other Ways to Connect</h2>
+            <p class="text-center text-gray-400 mb-6">
+                You can also find us on social media or reach out via email.
+            </p>
+            <div class="space-y-4">
+                 <div class="flex items-center justify-center contact-method">
+                    <i class="fas fa-envelope fa-fw mr-3"></i>
+                    <a href="mailto:sathwik677@gmail.com">sathwik677@gmail.com</a>
+                </div>
+                <div class="flex items-center justify-center contact-method">
+                    <i class="fab fa-discord fa-fw mr-3"></i>
+                    <a href="https://discord.gg/eD6bnx8rpb" target="_blank" rel="noopener noreferrer">Join our Discord Server</a>
+                </div>
+                <div class="flex items-center justify-center contact-method">
+                    <i class="fab fa-youtube fa-fw mr-3"></i>
+                    <a href="https://www.youtube.com/@XAVYgaming" target="_blank" rel="noopener noreferrer">Subscribe on YouTube</a>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <footer id="connect" class="bg-black text-white py-8 px-6 md:px-10 border-t border-gray-700/50">
         <div class="container mx-auto text-center footer-content fade-in-up">
@@ -333,36 +292,9 @@
             overlay.addEventListener('click', closeSidebar);
 
             sidebarLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    const href = link.getAttribute('href');
-                    const isHashLink = href && href.startsWith('#');
-                    const isExternalLink = link.target === '_blank';
-
-                    if (!isExternalLink) {
+                link.addEventListener('click', () => {
+                    if (link.target !== '_blank' && !link.getAttribute('href').startsWith('#')) {
                         closeSidebar();
-                    }
-                    
-                    if (isHashLink && href.length > 1 && document.querySelector(href)) {
-                        e.preventDefault(); 
-                        const targetElement = document.querySelector(href);
-                        if (targetElement) {
-                            targetElement.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    } else if (isHashLink && href === '#') {
-                        e.preventDefault();
-                    }
-                });
-            });
-
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId && targetId.length > 1 && document.querySelector(targetId)) {
-                        e.preventDefault();
-                        const targetElement = document.querySelector(targetId);
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    } else if (targetId === '#') {
-                        e.preventDefault();
                     }
                 });
             });
@@ -378,6 +310,54 @@
 
             document.querySelectorAll('main > div, .footer-content').forEach(el => {
                 observer.observe(el);
+            });
+
+            const form = document.getElementById('contactForm');
+            const result = document.getElementById('form-result');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(form);
+                const object = {};
+                formData.forEach((value, key) => {
+                    object[key] = value;
+                });
+                const json = JSON.stringify(object);
+                
+                result.innerHTML = "Please wait...";
+                result.classList.remove('text-green-400', 'text-red-400');
+
+                fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json
+                    })
+                    .then(async (response) => {
+                        let jsonResponse = await response.json();
+                        if (response.status == 200) {
+                            result.innerHTML = "✅ Message sent successfully!";
+                            result.classList.add('text-green-400');
+                        } else {
+                            console.log(response);
+                            result.innerHTML = jsonResponse.message;
+                            result.classList.add('text-red-400');
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        result.innerHTML = "Something went wrong!";
+                        result.classList.add('text-red-400');
+                    })
+                    .then(function() {
+                        form.reset();
+                        setTimeout(() => {
+                            result.innerHTML = '';
+                             result.classList.remove('text-green-400', 'text-red-400');
+                        }, 5000);
+                    });
             });
         });
     </script>
